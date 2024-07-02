@@ -1,0 +1,11 @@
+services:
+  backstage:
+    image: apexacme/backstage:v1.21.1
+    container_name: backstage
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./app/app-config.yaml:/backstage/app/app-config.yaml"
+    env_file: .env
+    ports:
+      - 3000:3000
+      - 7007:7007
